@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name="hal_repeat"
+#SBATCH --output="logs/hal_repeat.%j.%N.out"
+#SBATCH --error="logs/hal_repeat.%j.%N.err"
+#SBATCH --partition=cpun1
+#SBATCH --time=24
+#SBATCH --mail-user=kcchang3@illinois.edu
+#SBATCH --mail-type=ALL
+
+module load conda_base
+module load cuda/11.2.152
+
+PYTHON_VIRTUAL_ENVIRONMENT=/home/kcchang3/.conda/envs/hertin_clone
+conda activate ${PYTHON_VIRTUAL_ENVIRONMENT}
+
+python /home/kcchang3/workplace/HalRepeat/test.py
