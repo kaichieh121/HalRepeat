@@ -28,6 +28,6 @@ for i in $(seq $repeat); do
         r=$(squeue 2>&1)
     done
     echo "submitting job ..."
-    pid=$(swbatch $(pwd)/${script} | cut -d ' ' -f4)
+    pid=$(swbatch $(pwd)/${script} | grep "Submitted batch job" | cut -d ' ' -f4)
 
 done
