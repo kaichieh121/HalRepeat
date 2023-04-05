@@ -3,7 +3,7 @@
 repeat=$1
 pid=$2
 script=$3
-USERNAME=jialuli3
+USERNAME=kcchang3
 echo working directory in $(pwd)/${script}
 echo submitting job $repeat times
 for i in $(seq $repeat); do
